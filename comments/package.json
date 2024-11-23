@@ -2,6 +2,9 @@
   "name": "comments",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.ts"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/axios": "^0.14.4",
@@ -10,7 +13,13 @@
     "@types/nodemon": "^1.19.6",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "nodemon": "^3.1.7"
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
   }
 }

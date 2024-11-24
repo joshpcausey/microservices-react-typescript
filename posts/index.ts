@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const posts: Map<string, string> = new Map();
+const posts: Map<string, PostHash> = new Map();
 
 app.get('/posts', (req, res) => {
   res.send(posts);
@@ -17,12 +17,11 @@ app.post('/posts', (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
-  posts[id] = {
-    id,
-    title,
-  };
+  posts.set(id, title);
 
-  res.status(201).send(posts[id]);
+  console.error(posts.get(id));
+
+  res.status(201).send(posts.get(id));
 });
 
 app.listen(4000, () => {

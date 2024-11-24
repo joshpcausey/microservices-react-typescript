@@ -11,7 +11,7 @@ const PostList = () => {
 
   const fetchPosts = async () => {
     const response = await axios.get('http://localhost:4000/posts');
-    console.log(response.data);
+    console.error(response);
     setPosts(response.data);
   };
 
